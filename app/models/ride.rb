@@ -4,7 +4,7 @@ class Ride < ActiveRecord::Base
 
   def take_ride
 
-    if self.user.tickets < attraction.tickets && user.height < attraction.min_height
+    if self.user.tickets < attraction.tickets && self.user.height < attraction.min_height
         "You do not have enough tickets to ride the #{self.attraction.name}."
     elsif self.user.height < self.attraction.min_height
         "You are not tall enough to ride the #{self.attraction.name}."
