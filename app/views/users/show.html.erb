@@ -3,13 +3,11 @@
 <%= @user.name %>
 
 <% if !@user.admin %>
-
   Mood: <%= @user.mood %>
   Height: <%= @user.height %>
   Happiness: <%= @user.happiness %>
   Nausea: <%= @user.nausea %>
   Tickets: <%= @user.tickets %>
-
 <% else %>
     ADMIN
 <% end %>
