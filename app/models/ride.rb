@@ -11,6 +11,8 @@ class Ride < ActiveRecord::Base
       "Sorry. You do not have enough tickets to ride the #{attraction.name}."
     elsif user.height < attraction.min_height
       "Sorry. You are not tall enough to ride the #{attraction.name}."
+    else
+
     end
   end
 
