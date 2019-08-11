@@ -12,6 +12,7 @@ class Ride < ActiveRecord::Base
       self.user.nausea += self.attraction.nausea_rating
       self.user.happiness += self.attraction.happiness_rating
       self.user.save
+      return nil
     end
   end
 end
