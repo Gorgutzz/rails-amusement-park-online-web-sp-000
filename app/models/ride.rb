@@ -5,9 +5,9 @@ class Ride < ActiveRecord::Base
   def take_ride
 
     if self.user.tickets < self.attraction.tickets
-        msg +=" You do not have enough tickets to ride the #{self.attraction.name}."
+        "You do not have enough tickets to ride the #{self.attraction.name}."
     elsif self.user.height < self.attraction.min_height
-        msg +=" You are not tall enough to ride the #{self.attraction.name}."
+        "You are not tall enough to ride the #{self.attraction.name}."
     else
         self.user.tickets -=self.attraction.tickets
         self.user.nausea += self.attraction.nausea_rating
