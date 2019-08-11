@@ -2,7 +2,8 @@
 
 <%= @user.name %>
 
-<% if @user.admin == false %>
+<% if !@user.admin %>
+
   Mood: <%= @user.mood %>
   Height: <%= @user.height %>
   Happiness: <%= @user.happiness %>
