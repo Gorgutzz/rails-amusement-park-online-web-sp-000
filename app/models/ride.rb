@@ -23,9 +23,6 @@ class Ride < ActiveRecord::Base
     end
   end
 
-
-  ##helper methods for above
-
   def enough_tickets_to_ride?
     self.user.tickets > self.attraction.tickets
   end
