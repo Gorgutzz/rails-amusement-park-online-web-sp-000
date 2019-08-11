@@ -3,7 +3,6 @@ class Ride < ActiveRecord::Base
   belongs_to :attraction
 
   def take_ride
-    # binding.pry
 
     if !enough_tickets_to_ride? && !tall_enough_to_ride?
       "Sorry. You do not have enough tickets to ride the #{self.attraction.name}. You are not tall enough to ride the #{self.attraction.name}."
