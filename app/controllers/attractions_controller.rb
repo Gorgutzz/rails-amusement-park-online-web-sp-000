@@ -5,7 +5,8 @@ class AttractionsController < ApplicationController
     end
 
     def show
-        @attraction = Attraction.find(params[:id])
+      @attraction = Attraction.find(params[:id])
+      @ride = Ride.new
     end
 
     def new
@@ -33,4 +34,4 @@ class AttractionsController < ApplicationController
     def attraction_params
         params.require(:attraction).permit(:name, :tickets, :nausea_rating, :happiness_rating, :min_height)
     end
-end 
+end
