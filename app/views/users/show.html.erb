@@ -1,17 +1,17 @@
-<%= flash[:notice] %>
-
-<%= @user.name %>
-
-<% if @user.admin == false %>
-  Mood: <%= @user.mood %>
-  Height: <%= @user.height %>
-  Happiness: <%= @user.happiness %>
-  Nausea: <%= @user.nausea %>
-  Tickets: <%= @user.tickets %>
-
-<% else %>
-    ADMIN
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
 <% end %>
 
-<%= link_to 'Log Out', '/logout' %><br>
-<%= link_to 'See attractions', '/attractions' %>
+<h1><%= @user.name %>'s Profile</h1>
+
+<% if !@user.admin %>
+  <h3>Mood: <%= @user.mood %></h3>
+  <h3>Tickets: <%= @user.tickets %></h3>
+  <h3>Height: <%= @user.height %></h3>
+<% else %>
+  <h1>ADMIN</h1>
+<% end %>
+
+<h3><%= link_to "See attractions", attractions_path %></h3>
+
+<h3><%= link_to "Log Out", destroy_path %></h3>
